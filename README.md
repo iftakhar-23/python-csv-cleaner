@@ -1,61 +1,90 @@
-
 # Python CSV Cleaner
 
-A lightweight Python application that cleans CSV files by removing duplicate records, trimming unnecessary whitespace, and removing completely empty rows.
+A lightweight Python application for cleaning and organizing CSV files, featuring both a command-line interface and a desktop graphical interface.
 
 ## Features
 
-- Removes duplicate records.
-- Trims unnecessary whitespace from data.
-- Removes completely empty rows.
-- Validates CSV column consistency.
-- Preserves the original CSV file.
-- Exports cleaned data into a separate CSV file.
-- Provides a summary of cleaning operations.
-- Handles common file and data errors.
+- Remove duplicate records.
+- Trim unnecessary whitespace.
+- Remove completely empty rows.
+- Validate CSV column consistency.
+- Preserve original input files.
+- Export cleaned CSV files.
+- Display a summary of cleaning operations.
+- Handle common file and data errors.
+- Simple desktop interface using Tkinter.
 
 ## Technologies
 
 - Python 3
-- Python CSV module
+- CSV module
+- Tkinter
 - pathlib
+- unittest
 
 No external Python packages are required.
 
 ## Project Structure
 
-csv-cleaner/
+python-csv-cleaner/
 ├── main.py
+├── gui.py
+├── test_main.py
 ├── sample_customers.csv
-└── README.md
+├── README.md
+└── .gitignore
 
-## How to Run
+## Getting Started
 
-1. Install Python 3.
-2. Open a terminal inside the project folder.
-3. Run:
+### Requirements
 
-   py main.py
+- Python 3 installed.
+- No additional packages required.
 
-4. Enter the path of your CSV file when prompted.
-5. The program generates a new file with `_cleaned` added to its name.
+### Command-Line Version
 
-## Example
+Open a terminal inside the project folder and run:
 
-Input:
+    py main.py
 
-name,email,city
- Mahin , mahin@example.com , Mymensingh
-Rahim,rahim@example.com,Dhaka
-Mahin,mahin@example.com,Mymensingh
+Enter the path to your CSV file when prompted.
 
-Output:
+### Desktop Application
 
-name,email,city
-Mahin,mahin@example.com,Mymensingh
-Rahim,rahim@example.com,Dhaka
+Run:
+
+    py gui.py
+
+Use Browse Files to select a CSV file, then click Clean CSV File.
+
+## Running Tests
+
+Run the automated tests with:
+
+    py -m unittest -v test_main.py
+
+The tests cover duplicate removal, whitespace cleaning, original file preservation, empty files, and inconsistent column counts.
+
+## Output
+
+The application creates a new file with `_cleaned` added to the original filename.
+
+For example:
+
+    customers.csv
+    customers_cleaned.csv
+
+The original CSV file remains unchanged.
+
+Generated cleaned files are excluded from Git through `.gitignore`.
 
 ## Privacy
+
+All CSV processing takes place locally on the user's computer. No CSV data is uploaded to an external server.
+
+## License
+
+No license file has been added yet.
 
 All processing takes place locally on the computer. No CSV data is uploaded to an external server.
 
